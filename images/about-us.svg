@@ -1,0 +1,44 @@
+<!-- About Us Image: Team collaboration and professional workspace -->
+<svg width="500" height="350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="350" fill="url(#aboutGrad)"/>
+  
+  <!-- Office building silhouette -->
+  <rect x="50" y="150" width="60" height="150" fill="#667eea" opacity="0.8"/>
+  <rect x="120" y="100" width="60" height="200" fill="#764ba2" opacity="0.8"/>
+  <rect x="190" y="130" width="60" height="170" fill="#667eea" opacity="0.8"/>
+  
+  <!-- Windows -->
+  <rect x="60" y="160" width="15" height="15" fill="white" opacity="0.8"/>
+  <rect x="85" y="160" width="15" height="15" fill="white" opacity="0.8"/>
+  <rect x="60" y="190" width="15" height="15" fill="white" opacity="0.8"/>
+  <rect x="85" y="190" width="15" height="15" fill="white" opacity="0.8"/>
+  
+  <rect x="130" y="110" width="15" height="15" fill="white" opacity="0.8"/>
+  <rect x="155" y="110" width="15" height="15" fill="white" opacity="0.8"/>
+  <rect x="130" y="140" width="15" height="15" fill="white" opacity="0.8"/>
+  <rect x="155" y="140" width="15" height="15" fill="white" opacity="0.8"/>
+  
+  <!-- People figures -->
+  <circle cx="320" cy="200" r="25" fill="#667eea"/>
+  <rect x="305" y="225" width="30" height="50" fill="#667eea"/>
+  
+  <circle cx="380" cy="210" r="25" fill="#764ba2"/>
+  <rect x="365" y="235" width="30" height="50" fill="#764ba2"/>
+  
+  <!-- Connecting lines -->
+  <line x1="330" y1="220" x2="370" y2="230" stroke="#667eea" stroke-width="3" opacity="0.6"/>
+  
+  <!-- Text -->
+  <text x="250" y="50" font-family="Arial, sans-serif" font-size="22" fill="#333" font-weight="bold">About ConnectPro</text>
+  <text x="250" y="80" font-family="Arial, sans-serif" font-size="14" fill="#666">Building Professional Connections</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="400" cy="80" r="30" fill="none" stroke="#667eea" stroke-width="2" opacity="0.5"/>
+  <circle cx="420" cy="100" r="15" fill="#764ba2" opacity="0.3"/>
+</svg>

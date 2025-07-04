@@ -1,0 +1,19 @@
+<!-- This is a placeholder for the hero image. In a real application, you would replace this with an actual image -->
+<!-- Hero Image: Professional services collage showing people working, shaking hands, office environment -->
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#heroGrad)" opacity="0.1"/>
+  <text x="300" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#667eea" font-weight="bold">Professional Services</text>
+  <text x="300" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#666">Your Trusted Connection Hub</text>
+  <circle cx="150" cy="120" r="40" fill="#667eea" opacity="0.3"/>
+  <circle cx="450" cy="120" r="40" fill="#764ba2" opacity="0.3"/>
+  <circle cx="300" cy="300" r="40" fill="#667eea" opacity="0.3"/>
+  <rect x="200" y="250" width="200" height="80" rx="10" fill="#f8f9fa" stroke="#667eea" stroke-width="2"/>
+  <text x="300" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">Quality Assured</text>
+  <text x="300" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#666">Professional Network</text>
+</svg>

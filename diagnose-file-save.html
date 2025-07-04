@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Save Diagnostic</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
+        .result { margin: 15px 0; padding: 10px; border-radius: 4px; }
+        .success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        .diagnostics { background: #f8f9fa; padding: 15px; border: 1px solid #dee2e6; border-radius: 4px; font-family: monospace; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 File Save Diagnostic</h1>
+        <p>This will help identify why "Failed to save uploaded file" is occurring.</p>
+        
+        <form id="diagnosticForm" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="proof_image">Select a test file:</label>
+                <input type="file" id="proof_image" name="proof_image" required>
+            </div>
+            
+            <button type="submit">🔍 Run File Save Diagnostic</button>
+        </form>
+        
+        <div id="result"></div>
+        
+        <div class="info result">
+            <h4>Common Causes of "Failed to save uploaded file":</h4>
+            <ul>
+                <li><strong>Directory doesn't exist</strong> - Upload directory not created</li>
+                <li><strong>Permission denied</strong> - Web server can't write to directory</li>
+                <li><strong>Disk space full</strong> - No space left on device</li>
+                <li><strong>SELinux/Security</strong> - Security policies blocking file operations</li>
+                <li><strong>Path issues</strong> - Incorrect file paths</li>
+                <li><strong>Temp file issues</strong> - Temporary file already moved or deleted</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('diagnosticForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const resultDiv = document.getElementById('result');
+            
+            resultDiv.innerHTML = '<div class="info result">🔍 Running diagnostics...</div>';
+            
+            fetch('diagnose-file-save.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(text => {
+                console.log('Raw response:', text);
+                
+                try {
+                    const data = JSON.parse(text);
+                    
+                    if (data.success) {
+                        resultDiv.innerHTML = 
+                            '<div class="success result">✅ ' + data.message + '</div>' +
+                            '<div class="diagnostics">' + JSON.stringify(data.diagnostics, null, 2) + '</div>';
+                    } else {
+                        resultDiv.innerHTML = 
+                            '<div class="error result">❌ ' + data.error + '</div>' +
+                            '<div class="diagnostics">' + JSON.stringify(data.diagnostics, null, 2) + '</div>';
+                    }
+                } catch (e) {
+                    resultDiv.innerHTML = '<div class="error result">❌ Invalid response:<br><pre>' + text + '</pre></div>';
+                }
+            })
+            .catch(error => {
+                resultDiv.innerHTML = '<div class="error result">❌ Request failed: ' + error.message + '</div>';
+            });
+        });
+    </script>
+</body>
+</html>

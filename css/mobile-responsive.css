@@ -1,0 +1,591 @@
+/* Mobile-First Responsive CSS for ConnectPro Agency */
+/* This file provides comprehensive mobile responsiveness for all components */
+
+/* Base responsive utilities */
+.mobile-hide {
+    display: none;
+}
+
+.mobile-show {
+    display: block;
+}
+
+.mobile-text-center {
+    text-align: center;
+}
+
+.mobile-margin-bottom {
+    margin-bottom: 1rem;
+}
+
+/* Responsive Tables */
+.table-responsive-stack {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive-stack table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-responsive-stack th,
+.table-responsive-stack td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table-responsive-stack thead th {
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Card-based table layout for mobile */
+@media (max-width: 768px) {
+    .table-responsive-stack {
+        border: 0;
+    }
+    
+    .table-responsive-stack table,
+    .table-responsive-stack thead,
+    .table-responsive-stack tbody,
+    .table-responsive-stack th,
+    .table-responsive-stack td,
+    .table-responsive-stack tr {
+        display: block;
+    }
+    
+    .table-responsive-stack thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .table-responsive-stack tr {
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .table-responsive-stack td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        text-align: left;
+    }
+    
+    .table-responsive-stack td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #333;
+    }
+    
+    .table-responsive-stack td:last-child {
+        border-bottom: 0;
+    }
+}
+
+/* Responsive Forms */
+.form-responsive {
+    width: 100%;
+}
+
+.form-responsive .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.form-responsive .form-group {
+    margin-bottom: 1rem;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.form-responsive .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-responsive .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+@media (max-width: 768px) {
+    .form-responsive .form-row {
+        flex-direction: column;
+    }
+    
+    .form-responsive .form-group {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .form-responsive .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .form-responsive .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Responsive Navigation */
+.navbar-responsive {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-responsive .navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #667eea;
+}
+
+.navbar-responsive .navbar-nav {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.navbar-responsive .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    transition: color 0.15s ease-in-out;
+}
+
+.navbar-responsive .nav-link:hover {
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .navbar-responsive {
+        padding: 0.5rem;
+    }
+    
+    .navbar-responsive .navbar-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .navbar-responsive .nav-link {
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+    }
+}
+
+/* Responsive Cards */
+.card-responsive {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-responsive .card-header {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    background: #f8f9fa;
+    font-weight: 600;
+}
+
+.card-responsive .card-body {
+    padding: 1rem;
+}
+
+.card-responsive .card-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    background: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .card-responsive {
+        border-radius: 0.25rem;
+    }
+    
+    .card-responsive .card-header,
+    .card-responsive .card-body,
+    .card-responsive .card-footer {
+        padding: 0.75rem;
+    }
+}
+
+/* Responsive Buttons */
+.btn-responsive {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn-responsive-primary {
+    background: #667eea;
+    color: #fff;
+}
+
+.btn-responsive-primary:hover {
+    background: #5a6fd8;
+}
+
+.btn-responsive-secondary {
+    background: #6c757d;
+    color: #fff;
+}
+
+.btn-responsive-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-responsive-success {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn-responsive-success:hover {
+    background: #218838;
+}
+
+.btn-responsive-danger {
+    background: #dc3545;
+    color: #fff;
+}
+
+.btn-responsive-danger:hover {
+    background: #c82333;
+}
+
+.btn-responsive-warning {
+    background: #ffc107;
+    color: #212529;
+}
+
+.btn-responsive-warning:hover {
+    background: #e0a800;
+}
+
+@media (max-width: 768px) {
+    .btn-responsive {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .btn-group-responsive {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .btn-group-responsive .btn-responsive {
+        width: 100%;
+    }
+}
+
+/* Responsive Modals */
+.modal-responsive {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+}
+
+.modal-responsive.show {
+    display: flex;
+}
+
+.modal-responsive .modal-dialog {
+    max-width: 500px;
+    width: 100%;
+    margin: 1rem;
+}
+
+.modal-responsive .modal-content {
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.modal-responsive .modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-responsive .modal-body {
+    padding: 1rem;
+}
+
+.modal-responsive .modal-footer {
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .modal-responsive .modal-dialog {
+        margin: 0.5rem;
+        max-width: calc(100% - 1rem);
+    }
+    
+    .modal-responsive .modal-header,
+    .modal-responsive .modal-body,
+    .modal-responsive .modal-footer {
+        padding: 0.75rem;
+    }
+    
+    .modal-responsive .modal-footer {
+        flex-direction: column;
+    }
+    
+    .modal-responsive .modal-footer .btn-responsive {
+        width: 100%;
+    }
+}
+
+/* Responsive Dashboard Stats */
+.dashboard-stats-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card-responsive {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-card-responsive .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card-responsive .stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-stats-responsive {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .stat-card-responsive {
+        padding: 1rem;
+    }
+    
+    .stat-card-responsive .stat-number {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-stats-responsive {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-card-responsive {
+        padding: 0.75rem;
+    }
+    
+    .stat-card-responsive .stat-number {
+        font-size: 1.25rem;
+    }
+}
+
+/* Responsive Crypto Payment */
+.crypto-payment-responsive {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.crypto-card-responsive {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.qr-container-responsive {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.address-container-responsive {
+    background: rgba(255,255,255,0.1);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    margin: 1rem 0;
+    word-break: break-all;
+}
+
+.payment-actions-responsive {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .crypto-payment-responsive {
+        padding: 0.5rem;
+    }
+    
+    .crypto-card-responsive {
+        padding: 1.5rem;
+    }
+    
+    .qr-container-responsive {
+        padding: 1rem;
+    }
+    
+    .address-container-responsive {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .payment-actions-responsive {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+/* Responsive Booking Cards */
+.booking-card-responsive {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.booking-header-responsive {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.booking-title-responsive {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.booking-status-responsive {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.booking-details-responsive {
+    margin-bottom: 1rem;
+}
+
+.booking-detail-responsive {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.booking-actions-responsive {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .booking-card-responsive {
+        padding: 1rem;
+    }
+    
+    .booking-header-responsive {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .booking-title-responsive {
+        font-size: 1.1rem;
+    }
+    
+    .booking-detail-responsive {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .booking-actions-responsive {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .booking-actions-responsive .btn-responsive {
+        width: 100%;
+    }
+}
+
+/* Print styles */
+@media print {
+    .mobile-hide-print {
+        display: none !important;
+    }
+    
+    .table-responsive-stack table {
+        font-size: 0.8rem;
+    }
+    
+    .card-responsive {
+        break-inside: avoid;
+    }
+}

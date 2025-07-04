@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Authentication</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+        #result { margin-top: 20px; padding: 10px; background: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h1>Authentication System Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Login API</h2>
+        <button onclick="testLogin()">Test Login (admin@connectpro.com)</button>
+        <button onclick="testInvalidLogin()">Test Invalid Login</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test Registration API</h2>
+        <button onclick="testRegistration()">Test Registration (new user)</button>
+    </div>
+    
+    <div id="result"></div>
+
+    <script>
+        async function testLogin() {
+            const result = document.getElementById('result');
+            result.innerHTML = 'Testing login...';
+            
+            try {
+                const response = await fetch('/Agency/api/index.php/auth?action=login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'admin@connectpro.com',
+                        password: 'password'
+                    })
+                });
+                
+                const data = await response.json();
+                result.innerHTML = `<h3>Login Test Result:</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                result.innerHTML = `<h3>Login Test Error:</h3><pre>${error.message}</pre>`;
+            }
+        }
+        
+        async function testInvalidLogin() {
+            const result = document.getElementById('result');
+            result.innerHTML = 'Testing invalid login...';
+            
+            try {
+                const response = await fetch('/Agency/api/index.php/auth?action=login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: 'invalid@example.com',
+                        password: 'wrongpassword'
+                    })
+                });
+                
+                const data = await response.json();
+                result.innerHTML = `<h3>Invalid Login Test Result:</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                result.innerHTML = `<h3>Invalid Login Test Error:</h3><pre>${error.message}</pre>`;
+            }
+        }
+        
+        async function testRegistration() {
+            const result = document.getElementById('result');
+            result.innerHTML = 'Testing registration...';
+            
+            const randomEmail = `test${Date.now()}@example.com`;
+            
+            try {
+                const response = await fetch('/Agency/api/index.php/auth?action=register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        firstName: 'Test',
+                        lastName: 'User',
+                        email: randomEmail,
+                        password: 'password123',
+                        role: 'content-admin'
+                    })
+                });
+                
+                const data = await response.json();
+                result.innerHTML = `<h3>Registration Test Result:</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+            } catch (error) {
+                result.innerHTML = `<h3>Registration Test Error:</h3><pre>${error.message}</pre>`;
+            }
+        }
+    </script>
+</body>
+</html>

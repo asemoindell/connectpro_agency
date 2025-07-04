@@ -1,0 +1,134 @@
+# Sensitive configuration files
+config/database.php
+config/config.php
+.env
+.env.local
+.env.production
+
+# Log files
+*.log
+logs/
+error.log
+access.log
+
+# Database dumps
+*.sql
+*.db
+*.sqlite
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependency directories
+node_modules/
+vendor/
+bower_components/
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Cache directories
+cache/
+.cache/
+
+# Session files
+sessions/
+*.sess
+
+# Upload directories with user content
+uploads/user_uploads/
+uploads/temp/
+uploads/payment_proofs/
+
+# Backup files
+*.bak
+*.backup
+
+# Test files (keeping documentation)
+test-*.php
+test-*.html
+debug-*.php
+debug-*.html
+check-*.php
+fix-*.php
+final-*.php
+verify-*.php
+setup-*.php
+comprehensive-*.php
+diagnose-*.php
+simple-*.php
+emergency-*.php
+performance-*.php
+system-*.php
+*.json
+clear-*.php
+find-*.php
+get-*.php
+remove-*.php
+login-*.html
+service-*.html
+dashboard-*.html
+*-test.html
+*-test.php
+*-fixed.html
+*-fixed.php
+*-old.php
+*-demo.html
+*-complete.html
+*-complete.php
+*-unified.php
+*-unified.html
+*-status-*.html
+*-status-*.php
+*-feature.html
+*-feature.php
+*-management-*.html
+*-management-*.php
+*-interface.html
+*-interface.php
+*-simulation.php
+*-simulation.html
+*-diagnostic.php
+*-diagnostic.html
+*-investigation.php
+*-investigation.html
+*-resolution.php
+*-resolution.html
+*-error-*.php
+*-error-*.html
+admin-dashboard.html
+admin-login.html
+mobile-responsive-test.html
+payment-proof-removal-complete.html
+payment-status-error-fix.html
+payment-submit-cancel-feature.html
+getCode
+
+# Local development files
+local_config.php
+dev_config.php
+
+# PHP error logs
+php_errors.log
