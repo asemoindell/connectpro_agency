@@ -60,7 +60,9 @@ cd connectpro-agency
 
 ### 2. Database Setup
 1. Create a MySQL database named `connectpro_agency`
-2. Import the database schema (SQL file to be provided)
+2. Import the database:
+   - **With sample data**: Import `connectpro_agency.sql` (recommended for testing)
+   - **Structure only**: Import `database_schema.sql` (for production)
 3. Configure database connection in `config/database.php`
 
 ### 3. Configuration
